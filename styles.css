@@ -1,6 +1,23 @@
-/* header {
-    background-image: url("images /quarantini_720.jpg");
-    margin: 10%;
-    padding: 5%
+header {
+    margin: 2%;
+    padding: 2%;
+    display: flex; 
+    max-height: 20%;
+    max-width: 100%;
 
-} */
+
+}
+#logo {
+    width:30%;
+    height:10%;
+    z-index: 0;
+
+}
+h1 {
+    color: #667c85;
+    font-family: 'Tenali Ramakrishna', sans-serif;
+    background-color: #b9d4e95d;
+}
+
+
+
