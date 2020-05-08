@@ -6,119 +6,120 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Tenali+Ramakrishna&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <title>Quarantini</title>
 </head>
 
 <body>
+  <header class="header" id="nameLogo">
+    <img id="logo" src="images /quarantini_720.jpg" alt="Quarantini Logo" />
+    <h1>QUARANTINI</h1>
+  </header>
   <div class="container">
-    <header class="header" id="nameLogo">QUARANTINI</header>
-
     <!-- SEARCH BAR -->
     <div class="row">
-      <form class="col s4">
+      <form class="col 4">
         <div class="row">
           <div class="search-wrapper">
-            <input class="col s11" id="search" placeholder="Search" />
-            <i class="material-icons">search</i>
+            <input class="col s8 search-area" id="search" placeholder="Search" />
+            <button id="searchdrink" class="btn col s2 waves-effect waves-light search-button" type="submit">
+              <i class="material-icons left col s1">Search</i>
+            </button>
           </div>
-          <!-- PAST SEARCHES -->
-        </div>
-        <div class="row">
-          <div class="col s12">
-            <div class="card blue-grey darken-1">
-              <div class="card-content white-text">
-                <span class="card-title">Card Title</span>
-                <p>This is where past drink searches will go.</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </form>
+    </div>
 
-      <!-- DRINK IMAGE -->
-      <div class="col s4">
-        <div class="row">
-          <div class="col s12">
-            <div class="card">
-              <div class="card-image">
-                <img src="images/sample-1.jpg" />
-                <span class="card-title">Card Title</span>
-              </div>
-              <div class="card-content">
-                <p>Drink Image</p>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <!-- ENTERTAINMENT API -->
-
-        <div class="row">
-          <div class="col s12">
-            <div class="card blue-grey darken-1">
-              <div class="card-content white-text">
-                <span class="card-title">Card Title</span>
-                <span id="oneshow">
-                <p>
-                  I am a very simple card.
-                </p>
-              </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- DRINK INFO API -->
-      <div class="col s4">
-        <div class="row">
-          <div class="col s12">
-            <div class="card blue-grey darken-1">
-              <div class="card-content white-text">
-                <span class="card-title">Card Title</span>
-                <p>
-                  I am a very simple card. I am good at containing small bits
-                  of information. I am convenient because I require little
-                  markup to use effectively.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- INGREDIENTS REVEAL CARD -->
-        <div class="row" id="ingredients-api">
+    <!-- DRINK IMAGE -->
+    <div class="col s3">
+      <div class="row">
+        <div class="col s10">
           <div class="card">
-            <div class="col s12">
-              <div class="card-image waves-effect waves-block waves-light">
-                <!-- <img class="activator" src="images/office.jpg" /> -->
-              </div>
-              <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">Card Title<i
-                    class="material-icons right">more_vert</i></span>
-                <p><a href="#">This is a link</a></p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">Card Title<i
-                    class="material-icons right">close</i></span>
-                <p>
-                  Here is some more information about this product that is
-                  only revealed once clicked on.
-                </p>
-              </div>
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60" />
+              <span class="card-title">Card Title</span>
+            </div>
+            <div class="card-content">
+              <p>Drink Image</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="../assets/drink_info.js"></script>
-  <script src="../assets/random_games.js"></script>
+    <!-- DRINK INFO API -->
+    <div class="col s5">
+      <div class="row">
+        <div class="col s12">
+          <div class="card">
+            <div class="card-content white-text">
+              <span class="card-title">Drink Info:</span>
+              <p>
+                <ul>
+                  <li id="fun-info-li">Info:</li>
+                  <li id="items-li">Ingredients:</li>
+                  <li id="recipe-li">Recipe:</li>
+                </ul>
+              </p>
+            </div>
+            <!-- INGREDIENTS REVEAL CARD -->
+            <div class="row" id="grocery-ingredients-api">
+              <div class="card">
+                <div class="col s12">
+                  <div class="card-image waves-effect waves-block waves-light">
+                    <!-- <img class="activator" src="images/office.jpg" /> -->
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title activator">Card Title<i class="material-icons right">more_vert</i></span>
+                    <p><a href="#">Ingredients Reveal</a></p>
+                  </div>
+                  <div class="card-reveal">
+                    <span class="card-title ">Card Title<i class="material-icons right">close</i></span>
+                    <p>
+                      Here is some more information about this product that is only
+                      revealed once clicked on.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
+      </div>
+
+
+
+    </div>
+
+    <!-- ENTERTAINMENT API -->
+
+    <div class="row">
+      <div class="col s12">
+        <div class="card">
+          <div class="card-content white-text">
+            <span class="card-title">Entertainment</span>
+            <span id="oneshow">
+              <p>
+                I am a very simple card.
+              </p>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="./js-files/drink_info.js"></script>
+  <script src="./js-files/streaming-video.js"></script>
+  <script src="./js-files/ingredients.js"></script>
 </body>
 
 </html>
