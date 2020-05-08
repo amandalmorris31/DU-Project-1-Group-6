@@ -4,10 +4,13 @@ $("document").ready(function () {
 
   var masterDrinkArray = [];
 
+  var userValue = $("#search").val();
+  console.log(userValue);
+
   // var drink = userValue
 
   // functions
-  searchDrink("margarita");
+  //searchDrink("margarita");
   function searchDrink(drink) {
     console.log(drink);
     var ingredients = [];
@@ -24,12 +27,11 @@ $("document").ready(function () {
       url: queryURL,
       method: "GET",
     }).then(function (response) {
-      console.log(response);
+      console.log("this is the response from ajax", response);
       // console.log(response.drinks[0].strInstructions);
       for (var i = 0; i < response.drinks.length; i++) {
         ingredients = [];
         measurements = [];
-
         // if conditional statements for ingredients
         console.log(response.drinks[i].strIngredient1);
         if (response.drinks[i].strIngredient1 != null) {
@@ -138,21 +140,42 @@ $("document").ready(function () {
         currentDrink.measurements = measurements;
         currentDrink.recipe = response.drinks[i].strInstructions;
         masterDrinkArray.push(currentDrink);
-        console.log(masterDrinkArray);
 
-        console.log(masterDrinkArray[0].ingredients[0]);
+        // console.log(masterDrinkArray[0].ingredients[0]);
       }
+      console.log("ingred", ingredients);
+      console.log("measure", measurements);
+      for (i = 0; i < ingredients.length; i++) {
+        console.log("you need: ", ingredients[i] + " + " + measurements[i]);
+      }
+      masterDrinkArray = [];
+      console.log(masterDrinkArray);
     });
   }
+
+  // drink image fx
+  // function getDrinkImage(userValue) {
+  //   // create api call url
+
+  //   var drinkQueryUrl = "";
+
+  //   $.ajax({
+  //     url: ,
+  //     method: 'GET',
+  //   }).then(function(renderImage) {
+
+  //   })
+  // }
 
   // event handlers
   $("#searchdrink").on("click", function (event) {
     event.preventDefault();
     console.log("clicked");
+    var search = $("#search").val();
+    console.log(search);
+    // call searchDrink function passing userValue through it
+    searchDrink(search);
 
-    var userValue = $("#search").val();
-    console.log(userValue);
-
-    searchDrink(userValue);
+    // call the renderDrinkImage fx passing userValue through it
   });
 });
