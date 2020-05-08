@@ -147,25 +147,16 @@ $("document").ready(function () {
       console.log("measure", measurements);
       for (i = 0; i < ingredients.length; i++) {
         console.log("you need: ", ingredients[i] + " + " + measurements[i]);
+        $("#items-li").append(measurements[i] + ingredients[i]);
       }
+
+      // calling the drink image
+      var drinkImage = response.drinks[0].strDrinkThumb;
+      console.log(drinkImage);
       masterDrinkArray = [];
       console.log(masterDrinkArray);
     });
   }
-
-  // drink image fx
-  // function getDrinkImage(userValue) {
-  //   // create api call url
-
-  //   var drinkQueryUrl = "";
-
-  //   $.ajax({
-  //     url: ,
-  //     method: 'GET',
-  //   }).then(function(renderImage) {
-
-  //   })
-  // }
 
   // event handlers
   $("#searchdrink").on("click", function (event) {
