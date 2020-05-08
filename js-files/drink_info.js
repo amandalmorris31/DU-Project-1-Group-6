@@ -128,16 +128,16 @@ $("document").ready(function () {
         if (response.drinks[i].strMeasure15 != null) {
           measurements.push(response.drinks[i].strMeasure15);
         }
-        // console.log(measurements);
-        // get recipe (instructions) from the api
-        // var instructions = response.drinks[i].strInstructions;
-        // recipe.push(response.drinks[i].strInstructions);
-        // console.log(instructions);
+
         // empty object that will contain the arrays we are pushing the values to
+        masterDrinkArray = [];
+        console.log(masterDrinkArray);
         var currentDrink = {};
         currentDrink.name = response.drinks[i].strDrink;
         currentDrink.ingredients = ingredients;
         currentDrink.measurements = measurements;
+        var recipe = response.drinks[i].strInstructions;
+        // console.log(recipe);
         currentDrink.recipe = response.drinks[i].strInstructions;
         masterDrinkArray.push(currentDrink);
 
@@ -146,15 +146,14 @@ $("document").ready(function () {
       console.log("ingred", ingredients);
       console.log("measure", measurements);
       for (i = 0; i < ingredients.length; i++) {
-        console.log("you need: ", ingredients[i] + " + " + measurements[i]);
-        $("#items-li").append(measurements[i] + ingredients[i]);
+        // console.log("you need: ", ingredients[i] + " + " + measurements[i]);
+        $("#items-li").append(" " + measurements[i] + ingredients[i]);
       }
+      $("#recipe-li").append(" " + recipe);
 
       // calling the drink image
       var drinkImage = response.drinks[0].strDrinkThumb;
       console.log(drinkImage);
-      masterDrinkArray = [];
-      console.log(masterDrinkArray);
     });
   }
 
