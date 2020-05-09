@@ -41,12 +41,11 @@
         <div class="col s10">
           <div class="card">
             <div class="card-image">
-              <img
-                src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60" />
+              <img />
               <span class="card-title">Card Title</span>
             </div>
-            <div class="card-content">
-              <p>Drink Image</p>
+            <div class="card-content drink-name">
+            
             </div>
           </div>
         </div>
@@ -58,36 +57,20 @@
         <div class="col s12">
           <div class="card">
             <div class="card-content white-text">
-              <span class="card-title">Drink Info:</span>
+              <span class="card-title drink-name">Drink Info:</span>
               <p>
                 <ul>
-                  <li id="fun-info-li">Info:</li>
-                  <li id="items-li">Ingredients:</li>
-                  <li id="recipe-li">Recipe:</li>
+                  
+                  <li id="items-li"><span class="ultitle">Ingredients:</span>
+                  <p id="ingredients-list"></p></li>
+                  <br>
+                  <li id="recipe-li"><span class="ultitle">Recipe:</span>
+                  <p id="recipe-label"></p></li>
                 </ul>
               </p>
             </div>
             <!-- INGREDIENTS REVEAL CARD -->
-            <div class="row" id="grocery-ingredients-api">
-              <div class="card">
-                <div class="col s12">
-                  <div class="card-image waves-effect waves-block waves-light">
-                    <!-- <img class="activator" src="images/office.jpg" /> -->
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title activator">Card Title<i class="material-icons right">more_vert</i></span>
-                    <p><a href="#">Ingredients Reveal</a></p>
-                  </div>
-                  <div class="card-reveal">
-                    <span class="card-title ">Card Title<i class="material-icons right">close</i></span>
-                    <p>
-                      Here is some more information about this product that is only
-                      revealed once clicked on.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            
           </div>
         </div>
 
@@ -98,9 +81,9 @@
     </div>
 
     <!-- ENTERTAINMENT API -->
-
+    <div class="row"></div>
     <div class="row">
-      <div class="col s12">
+      <div class="col s3">
         <div class="card">
           <div class="card-content white-text">
             <span class="card-title">Entertainment</span>
@@ -116,15 +99,22 @@
 
 
             <span id="oneshow">
-              <p>
-                I am a very simple card.
-              </p>
+              
             </span>
           </div>
         </div>
       </div>
     </div>
-    
+
+    <div class="row">
+      <div class="search-wrapper">
+        <input class="search-area" id="searchShow" placeholder="Search" />
+        <button id="searchShowButton" class="btn col s2 waves-effect waves-light search-button" onclick="doSearch()">
+          <i class="material-icons left col s1">Search</i>
+        </button>
+      </div>
+</div>
+
   </div>
   </div>
 
