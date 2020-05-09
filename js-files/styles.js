@@ -24,6 +24,9 @@ $(document).ready(function () {
             $("h1").css('color', 'white');
             $(".card-title").css('color', 'white');
             $(".ultitle").css('color', 'white');
+            $("li").css('color', 'white');
+            $("i").css('color', 'white');
+            $(".drink-name").css('color', 'white');
             $("img").css("opacity", "0.7");
             $(function () {
                 $(document).tooltip();
