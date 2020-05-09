@@ -11,16 +11,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="styles.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 
   <title>Quarantini</title>
 </head>
 
 <body>
+  <div class="mode" title="This was made in jQuery using the tooltip() function.">
+    "Sleepless Nights":
+    <span class="change">OFF</span>
+  </div>
   <header class="header" id="nameLogo">
-    <img id="logo" src="images/quarantini_720.jpg" alt="Quarantini Logo" />
-    <h1 id="effect">QUARANTINI</h1>
-    <img id="logo" src="images/Quarantini.png" alt="Quarantini Logo" />
-
+    <img id="logo" src="images/quarantini_720.jpg" alt="Quarantini Logo" title="Our logo uses the img tag" />
+    <h1 id="effect" title="This uses the fadeIn function. The line beneath is a pseudoclass on the header tag.">
+      QUARANTINI</h1>
     <!-- Modal Trigger -->
     <a class="waves-effect waves-light modal-trigger" href="#modal1"></a>
 
@@ -44,8 +49,8 @@
         <div class="row">
           <div class="search-wrapper">
             <input class="col s8 search-area" id="search" placeholder="Drink Search" />
-            <button id="searchdrink" class="btn col s2 waves-effect waves-light search-button" type="submit">
-              <i class="material-icons left col s1">Search</i>
+            <button id="searchdrink" class="btn search-button" type="submit">
+              <i class="left col s1" title="Use the search bar to trigger the CocktailDB API.">Go</i>
             </button>
           </div>
       </form>
@@ -59,10 +64,9 @@
             <div class="card-image">
               <img
                 src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60" />
-              <span class="card-title">Card Title</span>
             </div>
-            <div class="card-content">
-              <p>Drink Image</p>
+            <div class="card-content drink-name">
+              <p id="image-drink-name" title="The image for each recipe is displayed here.">Fresh Lime Mojito</p>
             </div>
           </div>
         </div>
@@ -74,7 +78,7 @@
         <div class="col s12">
           <div class="card">
             <div class="card-content white-text">
-              <span class="card-title drink-name">Drink Info:</span>
+              <span class="card-title drink-name" title="This uses the CocktailDB call">Drink Info:</span>
               <p>
                 <ul>
                   <li id="items-li"><span class="ultitle">Ingredients:</span>
@@ -101,7 +105,7 @@
       <div class="col s12">
         <div class="card">
           <div class="card-content white-text">
-            <span class="card-title">Entertainment</span>
+            <span class="card-title" title="This uses the Utelly call">Entertainment</span>
             <span id="oneshow">
             </span>
           </div>
@@ -112,8 +116,8 @@
       <div class="col s2">
         <div class="search-wrapper">
           <input class="search-area" id="searchShow" placeholder="Entertainment Search" />
-          <button id="searchShowButton" class="btn col s2 waves-effect waves-light search-button" onclick="doSearch()">
-            <i class="material-icons left col s1">Search</i>
+          <button id="searchShowButton" class="btn search-button" onclick="doSearch()">
+            <i class="left col s1" title="Use the search bar to trigger the Utelly API.">Go</i>
           </button>
         </div>
       </div>

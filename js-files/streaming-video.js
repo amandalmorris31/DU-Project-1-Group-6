@@ -4,7 +4,7 @@
 // Begin building an object to contain our API call's query parameters
 // Set the API key
 
-function buildApicall(searchTerm){
+function buildApicall(searchTerm) {
     var baseUrl = "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term="
     var newUrl = baseUrl + encodeURI(searchTerm) + "&country=us";
     var settings = {
@@ -21,40 +21,40 @@ function buildApicall(searchTerm){
     return settings;
 }
 
-var defaultSettings=buildApicall("breaking bad");
+var defaultSettings = buildApicall("breaking bad");
 
 userSearch(defaultSettings);
 function userSearch(settings) {
     $.ajax(settings).done(function (response) {
         console.log(response);
         console.log(response.results.length);
-        var arrayNum=(response.results.length);
+        var arrayNum = (response.results.length);
         console.log(arrayNum);
 
-    $("#oneshow").empty();
+        $("#oneshow").empty();
 
-        for (var i = 0; i < arrayNum; i++){
-            var serviceName=(response.results[i].locations[0].display_name);
-            var p1=$("<p>");
+        for (var i = 0; i < arrayNum; i++) {
+            var serviceName = (response.results[i].locations[0].display_name);
+            var p1 = $("<p>");
             p1.text(serviceName);
-            
-        $("#oneshow").append(p1);
+
+            $("#oneshow").append(p1);
         }
         // console.log(serviceName);
 
-    for (var i=0; i < arrayNum; i++){
-            var serviceURL=(response.results[i].locations[0].url);
-            var p2=$("<p>");
+        for (var i = 0; i < arrayNum; i++) {
+            var serviceURL = (response.results[i].locations[0].url);
+            var p2 = $("<p>");
             p2.text(serviceURL);
 
-            var a=$("<a>");
-            
+            var a = $("<a>");
+
             $("#oneshow").append(p2);
         }
     });
 };
 
-function doSearch(){
+function doSearch() {
     var searchTerm = $("#searchShow").val();
     console.log(searchTerm);
     var newSettings = buildApicall(searchTerm);
@@ -73,7 +73,7 @@ function doSearch(){
 
 
      //1. Entertainment div that displays from userinput
-         
+
 //      <div class="row">  d1
 //      <div class="col s12">  d2
 //        <div class="card blue-grey darken-1">  d3
