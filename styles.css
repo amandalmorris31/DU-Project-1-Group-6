@@ -1,3 +1,41 @@
+.card {
+    background-color: #4ea38b6b;
+}
+
+.card-title {
+    color: #303a2d;  
+}
+
+.container {
+    width: auto;
+    font-family: 'Lato', sans-serif;
+    margin: 1%;
+    border-radius: 5px;
+    color: #303a2d;
+    display:flex;
+}
+h1 {
+    color: #516269;
+    font-family: 'Tenali Ramakrishna', sans-serif;
+    /* text-indent:100%; */
+    font-size: 75px; 
+    font-weight: 300;
+    display: none;
+    padding-left: 20%;
+    position: relative;
+    width: auto;
+
+}
+h1:before{
+    content: "";
+    position: absolute;
+    width: 30%;
+    height: 1px;
+    bottom: 0;
+    left:60%;
+    border-bottom: 1px solid grey;
+    
+}
 header {
     margin: 1%;
     padding: .5%;
@@ -9,60 +47,28 @@ header {
     border-radius: 5px;   
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
-
-}
-#logo {
-    width:15%;
-    height:5%;
-    z-index: 0;
-}
-h1:before{
-    content: "";
-    position: absolute;
-    width: 50%;
-    height: 1px;
-    bottom: 0;
-    left: 125%;
-    border-bottom: 1px solid grey;
-    
-}
-h1 {
-    color: #516269;
-    font-family: 'Tenali Ramakrishna', sans-serif;
-    text-indent:100%;
-    font-size: 75px; 
-    font-weight: 300;
-    display: inline-block;
-    padding-bottom: 5px;
-    position: relative;
-}
-
-body {
-    background-color: #d4e0ee55;
-    
-}
-.container {
-    width: 100%;
-    font-family: 'Lato', sans-serif;
-    margin: 1%;
-    display: flex; 
-    border-radius: 5px;
-    color: #303a2d;
 }
 img {
     border-radius: 5px;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
 }
-
-.card {
-    background-color: #4ea38b6b;
+#logo {
+    width:15%;
+    height:5%;
+    z-index: 0;
 }
 
-.card-title {
-    color: #303a2d;  
-}
 
+#modal1 {
+    font-family: 'Lato', sans-serif;
+    background-color: #d8cab7;
+    color: #7c4935;
+    display: none;
+}
+.modal-close{
+    color: #7c4935;
+}
 p {
     color: #303a2d;
 }
@@ -70,4 +76,3 @@ p {
 ul {
     color: #303a2d;
 }
-
