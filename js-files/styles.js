@@ -8,7 +8,8 @@ $(document).ready(function () {
             $(".container").fadeIn(1000);
         });
     });
+
+
+    $("#hi").bind("keyup", function (e) {
+    });
 });
-
-
-
