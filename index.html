@@ -17,8 +17,23 @@
 
 <body>
   <header class="header" id="nameLogo">
-    <img id="logo" src="images /quarantini_720.jpg" alt="Quarantini Logo" />
-    <h1>QUARANTINI</h1>
+    <img id="logo" src="images/quarantini_720.jpg" alt="Quarantini Logo" />
+    <h1 id="effect">QUARANTINI</h1>
+    <!-- Modal Trigger -->
+    <a class="waves-effect waves-light modal-trigger" href="#modal1"></a>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>MUST BE 21 TO ENTER</h4>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">I am over 21</a>
+      </div>
+    </div>
+    <select name="effects" id="effectTypes">
+      <option value="fade">Fade</option>
+    </select>
   </header>
   <div class="container">
     <!-- SEARCH BAR -->
@@ -26,7 +41,7 @@
       <form class="col 4">
         <div class="row">
           <div class="search-wrapper">
-            <input class="col s8 search-area" id="search" placeholder="Search" />
+            <input class="col s8 search-area" id="search" placeholder="Drink Search" />
             <button id="searchdrink" class="btn col s2 waves-effect waves-light search-button" type="submit">
               <i class="material-icons left col s1">Search</i>
             </button>
@@ -58,35 +73,18 @@
         <div class="col s12">
           <div class="card">
             <div class="card-content white-text">
-              <span class="card-title">Drink Info:</span>
+              <span class="card-title drink-name">Drink Info:</span>
               <p>
                 <ul>
-                  <li id="fun-info-li">Info:</li>
-                  <li id="items-li">Ingredients:</li>
-                  <li id="recipe-li">Recipe:</li>
+                  <li id="items-li"><span class="ultitle">Ingredients:</span>
+                    <p id="ingredients-list"></p>
+                  </li>
+                  <br>
+                  <li id="recipe-li"><span class="ultitle">Recipe:</span>
+                    <p id="recipe-label"></p>
+                  </li>
                 </ul>
               </p>
-            </div>
-            <!-- INGREDIENTS REVEAL CARD -->
-            <div class="row" id="grocery-ingredients-api">
-              <div class="card">
-                <div class="col s12">
-                  <div class="card-image waves-effect waves-block waves-light">
-                    <!-- <img class="activator" src="images/office.jpg" /> -->
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title activator">Card Title<i class="material-icons right">more_vert</i></span>
-                    <p><a href="#">Ingredients Reveal</a></p>
-                  </div>
-                  <div class="card-reveal">
-                    <span class="card-title ">Card Title<i class="material-icons right">close</i></span>
-                    <p>
-                      Here is some more information about this product that is only
-                      revealed once clicked on.
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -105,12 +103,18 @@
           <div class="card-content white-text">
             <span class="card-title">Entertainment</span>
             <span id="oneshow">
-              <p>
-                I am a very simple card.
-              </p>
             </span>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col s2">
+      <div class="search-wrapper">
+        <input class="search-area" id="searchShow" placeholder="Entertainment Search" />
+        <button id="searchShowButton" class="btn col s2 waves-effect waves-light search-button" onclick="doSearch()">
+          <i class="material-icons left col s1">Search</i>
+        </button>
       </div>
     </div>
   </div>
@@ -119,7 +123,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="./js-files/drink_info.js"></script>
   <script src="./js-files/streaming-video.js"></script>
-  <script src="./js-files/ingredients.js"></script>
+  <script src="./js-files/styles.js"></script>
 </body>
 
 </html>
