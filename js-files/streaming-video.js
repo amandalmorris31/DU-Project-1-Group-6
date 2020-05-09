@@ -4,7 +4,7 @@
 // Begin building an object to contain our API call's query parameters
 // Set the API key
 
-function buildApicall(searchTerm){
+function buildApicall(searchTerm) {
     var baseUrl = "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term="
     var newUrl = baseUrl + encodeURI(searchTerm) + "&country=us";
     var settings = {
@@ -21,7 +21,7 @@ function buildApicall(searchTerm){
     return settings;
 }
 
-var defaultSettings=buildApicall("breaking bad");
+var defaultSettings = buildApicall("breaking bad");
 
 userSearch(defaultSettings);
 function userSearch(settings) {
@@ -31,7 +31,7 @@ function userSearch(settings) {
         var arrayNum=(response.results.length);
         // console.log(arrayNum);
 
-    $("#oneshow").empty();
+        $("#oneshow").empty();
 
     for (var i = 0; i < arrayNum; i++) {
         var serviceName = (response.results[i].locations[0].display_name);
@@ -46,15 +46,13 @@ function userSearch(settings) {
         // p1.text(serviceName + serviceURL);
         $("#oneshow").append(newLink, lineBreak);
     }
-
     });
 };
 
-function doSearch(){
+function doSearch() {
     var searchTerm = $("#searchShow").val();
     // console.log(searchTerm);
     var newSettings = buildApicall(searchTerm);
     userSearch(newSettings);
 }
 
-	

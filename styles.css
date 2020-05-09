@@ -1,3 +1,10 @@
+.btn {
+    background-color: #4ea38b;
+    margin: 0%;
+    padding: 2%;  
+
+}
+
 .card {
     background-color: #4ea38b6b;
 }
@@ -14,14 +21,16 @@
     color: #303a2d;
     display:flex;
 }
+
 h1 {
     color: #516269;
     font-family: 'Tenali Ramakrishna', sans-serif;
     /* text-indent:100%; */
-    font-size: 75px; 
+    font-size: 400%; 
     font-weight: 300;
     display: none;
     padding-left: 20%;
+    padding: auto;
     position: relative;
     width: auto;
 
@@ -29,10 +38,10 @@ h1 {
 h1:before{
     content: "";
     position: absolute;
-    width: 30%;
+    width: 20%;
     height: 1px;
     bottom: 0;
-    left:60%;
+    left: 67%;
     border-bottom: 1px solid grey;
     
 }
@@ -53,12 +62,24 @@ img {
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
 }
+#image-drink-name {
+    text-align: center;
+}
 #logo {
     width:15%;
     height:5%;
     z-index: 0;
 }
-
+.left.col.s1 {
+    font-size: 100%;
+    line-height: 1;
+    text-transform: none;
+    display: inline-flex;
+    word-wrap: normal;
+    direction: ltr;
+    margin: 0%;
+   
+}
 
 #modal1 {
     font-family: 'Lato', sans-serif;
@@ -73,6 +94,21 @@ p {
     color: #303a2d;
 }
 
+
 ul {
     color: #303a2d;
 }
+
+.ultitle {
+    font-size: 120%;
+
+}
+.dark { 
+        background-color: #222; 
+        color: #e6e6e6; 
+    
+} 
+.mode { 
+    float:right;
+   color: #7c4935;
+} 
