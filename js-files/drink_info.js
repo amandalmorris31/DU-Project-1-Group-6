@@ -161,7 +161,14 @@ $("document").ready(function () {
 
       // calling the drink image
       var drinkImage = response.drinks[0].strDrinkThumb;
-      console.log(drinkImage);
+      //create a img element, give it src=drinkImage(which is a URL) and also we created an id called drink-img
+      var drinkElement = $("<img>")
+        .attr("src", response.drinks[0].strDrinkThumb)
+        .attr("id", "drink-img");
+      // jquery to select the container we want to put the image in and append the new created element
+      $(".card-image").empty();
+      $(".card-image").append(drinkElement);
+      //console.log(drinkImage);
     });
   }
 
