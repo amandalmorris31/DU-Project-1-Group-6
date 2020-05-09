@@ -150,7 +150,12 @@ $("document").ready(function () {
       $("#ingredients-list").empty();
       for (i = 0; i < ingredients.length; i++) {
         // console.log("you need: ", ingredients[i] + " + " + measurements[i]);
-        $("#items-li").append(" " + measurements[i] + ingredients[i]);
+        // $("#items-li").append(" " + measurements[i] + ingredients[i]);
+        if (!measurements[i]) {
+          $("#ingredients-list").append(" " + ingredients[i]);
+        } else {
+          $("#ingredients-list").append(" " + measurements[i] + ingredients[i]);
+        }
       }
       $("#recipe-li").append(" " + recipe);
 
