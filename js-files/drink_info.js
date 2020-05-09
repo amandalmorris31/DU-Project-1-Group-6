@@ -5,14 +5,14 @@ $("document").ready(function () {
   var masterDrinkArray = [];
 
   var userValue = $("#search").val();
-  console.log(userValue);
+  // console.log(userValue);
 
   // var drink = userValue;
 
   // functions
   //searchDrink("margarita");
   function searchDrink(drink) {
-    console.log(drink);
+    // console.log(drink);
     var ingredients = [];
     var measurements = [];
 
@@ -21,19 +21,19 @@ $("document").ready(function () {
       apiKey +
       "/search.php?s=" +
       drink;
-    console.log(queryURL);
+    // console.log(queryURL);
 
     $.ajax({
       url: queryURL,
       method: "GET",
     }).then(function (response) {
-      console.log("this is the response from ajax", response);
+      // console.log("this is the response from ajax", response);
       // console.log(response.drinks[0].strInstructions);
       for (var i = 0; i < response.drinks.length; i++) {
         ingredients = [];
         measurements = [];
         // if conditional statements for ingredients
-        console.log(response.drinks[0].strIngredient1);
+        // console.log(response.drinks[0].strIngredient1);
         if (response.drinks[0].strIngredient1 != null) {
           ingredients.push(response.drinks[i].strIngredient1);
         }
@@ -82,7 +82,7 @@ $("document").ready(function () {
         // console.log(ingredients);
 
         // if conditional statements for measurements of ingredients needed
-        console.log(response.drinks[0].strMeasure1);
+        // console.log(response.drinks[0].strMeasure1);
         if (response.drinks[0].strMeasure1 != null) {
           measurements.push(response.drinks[i].strMeasure1);
         }
@@ -131,11 +131,11 @@ $("document").ready(function () {
 
         // empty object that will contain the arrays we are pushing the values to
         masterDrinkArray = [];
-        console.log(masterDrinkArray);
+        // console.log(masterDrinkArray);
         var currentDrink = {};
         var drinkName = response.drinks[0].strDrink;
         currentDrink.name = response.drinks[0].strDrink;
-        console.log(drinkName);
+        // console.log(drinkName);
         currentDrink.ingredients = ingredients;
         //FOR KROGER API - create a for loop that goes through all the ingredients and calls a
         // KROGER function that you pass in the ingredient[i]
@@ -144,7 +144,7 @@ $("document").ready(function () {
         // console.log(recipe);
         currentDrink.recipe = response.drinks[i].strInstructions;
         masterDrinkArray.push(currentDrink);
-        console.log(masterDrinkArray);
+        // console.log(masterDrinkArray);
 
         // console.log(masterDrinkArray[0].ingredients[0]);
       }
@@ -155,8 +155,8 @@ $("document").ready(function () {
         //response
         // in the response select the ingredient div and append the searched ingrend
       }
-      console.log("ingred", ingredients);
-      console.log("measure", measurements);
+      // console.log("ingred", ingredients);
+      // console.log("measure", measurements);
       $("#ingredients-list").empty();
       for (i = 0; i < ingredients.length; i++) {
         // console.log("you need: ", ingredients[i] + " + " + measurements[i]);
@@ -189,9 +189,9 @@ $("document").ready(function () {
   // event handlers
   $("#searchdrink").on("click", function (event) {
     event.preventDefault();
-    console.log("clicked");
+    // console.log("clicked");
     var search = $("#search").val();
-    console.log(search);
+    // console.log(search);
     // call searchDrink function passing userValue through it
     searchDrink(search);
 
