@@ -17,8 +17,25 @@
 
 <body>
   <header class="header" id="nameLogo">
-    <img id="logo" src="images /quarantini_720.jpg" alt="Quarantini Logo" />
-    <h1>QUARANTINI</h1>
+    <img id="logo" src="images/quarantini_720.jpg" alt="Quarantini Logo" />
+    <h1 id="effect">QUARANTINI</h1>
+    <img id="logo" src="images/Quarantini.png" alt="Quarantini Logo" />
+
+    <!-- Modal Trigger -->
+    <a class="waves-effect waves-light modal-trigger" href="#modal1"></a>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>MUST BE 21 TO ENTER</h4>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">I am over 21</a>
+      </div>
+    </div>
+    <select name="effects" id="effectTypes">
+      <option value="fade">Fade</option>
+    </select>
   </header>
   <div class="container">
     <!-- SEARCH BAR -->
@@ -26,7 +43,7 @@
       <form class="col 4">
         <div class="row">
           <div class="search-wrapper">
-            <input class="col s8 search-area" id="search" placeholder="Search" />
+            <input class="col s8 search-area" id="search" placeholder="Drink Search" />
             <button id="searchdrink" class="btn col s2 waves-effect waves-light search-button" type="submit">
               <i class="material-icons left col s1">Search</i>
             </button>
@@ -34,18 +51,18 @@
       </form>
     </div>
 
-
     <!-- DRINK IMAGE -->
     <div class="col s3">
       <div class="row">
         <div class="col s10">
           <div class="card">
             <div class="card-image">
-              <img />
+              <img
+                src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60" />
               <span class="card-title">Card Title</span>
             </div>
-            <div class="card-content drink-name">
-            
+            <div class="card-content">
+              <p>Drink Image</p>
             </div>
           </div>
         </div>
@@ -60,68 +77,53 @@
               <span class="card-title drink-name">Drink Info:</span>
               <p>
                 <ul>
-                  
                   <li id="items-li"><span class="ultitle">Ingredients:</span>
-                  <p id="ingredients-list"></p></li>
+                    <p id="ingredients-list"></p>
+                  </li>
                   <br>
                   <li id="recipe-li"><span class="ultitle">Recipe:</span>
-                  <p id="recipe-label"></p></li>
+                    <p id="recipe-label"></p>
+                  </li>
                 </ul>
               </p>
             </div>
-            <!-- INGREDIENTS REVEAL CARD -->
-            
           </div>
         </div>
 
       </div>
-
 
 
     </div>
 
     <!-- ENTERTAINMENT API -->
-    <div class="row"></div>
+
     <div class="row">
-      <div class="col s3">
+      <div class="col s12">
         <div class="card">
           <div class="card-content white-text">
             <span class="card-title">Entertainment</span>
-            <div class="row">
-              <div class="search-wrapper">
-                <input class="search-area" id="searchShow" placeholder="Search" />
-                <button id="searchShowButton" class="btn col s2 waves-effect waves-light search-button" onclick="doSearch()">
-                  <i class="material-icons left col s1">Search</i>
-                </button>
-              </div>
-        </div>
-
-
-
             <span id="oneshow">
-              
             </span>
           </div>
         </div>
       </div>
     </div>
-
     <div class="row">
-      <div class="search-wrapper">
-        <input class="search-area" id="searchShow" placeholder="Search" />
-        <button id="searchShowButton" class="btn col s2 waves-effect waves-light search-button" onclick="doSearch()">
-          <i class="material-icons left col s1">Search</i>
-        </button>
+      <div class="col s2">
+        <div class="search-wrapper">
+          <input class="search-area" id="searchShow" placeholder="Entertainment Search" />
+          <button id="searchShowButton" class="btn col s2 waves-effect waves-light search-button" onclick="doSearch()">
+            <i class="material-icons left col s1">Search</i>
+          </button>
+        </div>
       </div>
-</div>
-
-  </div>
+    </div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="./js-files/drink_info.js"></script>
   <script src="./js-files/streaming-video.js"></script>
-  <script src="./js-files/ingredients.js"></script>
+  <script src="./js-files/styles.js"></script>
 </body>
 
 </html>
