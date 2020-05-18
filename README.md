@@ -14,5 +14,5 @@ WHEN user searches for a show/movie
 THEN call api for streaming services and update link to said show/movie title page for that streaming site. 
 
 
-
+This was deployed: https://amandalmorris31.github.io/DU-Project-1-Group-6/
 -
